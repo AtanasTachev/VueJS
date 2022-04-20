@@ -9,6 +9,7 @@ import SupportIcon from "./icons/IconSupport.vue";
 
 <template>
 <div>
+
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />
@@ -40,5 +41,6 @@ import SupportIcon from "./icons/IconSupport.vue";
   <WelcomeItem>
       <h2>You are the best</h2>
   </WelcomeItem>
+</div>
 
 </template>
