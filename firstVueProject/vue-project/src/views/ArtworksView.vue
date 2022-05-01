@@ -1,5 +1,5 @@
 <script setup>
-import Contacts from '@/components/Artworks.vue'
+import Artworks from '@/components/Artworks.vue'
 </script>
 
 <template>
