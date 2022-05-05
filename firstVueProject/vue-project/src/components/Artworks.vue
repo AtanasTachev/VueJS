@@ -3,22 +3,24 @@ const API_URL = `https://api.artic.edu/api/v1/artworks?page=1&limit=10`
 
 export default{
   data: () => ({
-    branches: ['main', 'v2-compat'],
-    currentBranch: 'main',
-    commits: null
+    // branches: ['main', 'v2-compat'],
+    // currentBranch: 'main',
+    limit: null
   }),
   created() {
     this.fetchData()
   },
   watch: {
-    currentBranch: 'fetchData'
+    // currentBranch: 'fetchData'
   },
   methods: {
     async fetchData() {
-      const url = `${API_URL}${this.currentBranch}`
-      this.commits = await (await fetch(url)).json()
+      const url = `${API_URL}` //${this.currentBranch}
+      this.limit = await (await fetch(url)).json()
+      console.log(fetchData());
     }
   }
+
 }
 </script>
 
