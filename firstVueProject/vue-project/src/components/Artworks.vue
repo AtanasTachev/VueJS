@@ -39,8 +39,8 @@ export default {
   data: () => ({
     // branches: ['main', 'v2-compat'],
     // currentBranch: 'main',
-    // page: null,
-    // limit: null,
+    data: null,
+    information: null,
   }),
   created() {
     this.fetchData();
@@ -51,30 +51,31 @@ export default {
   methods: {
     async fetchData() {
       const url = `${API_URL}`; //${this.currentBranch}
-      // this.limit = await (await fetch(url)).json();
-      // console.log(fetchData());
+      this.information = await (await fetch(url)).json();
+      this.data = this.information["data"];
+      console.log(this.data);
     },
   },
 };
 </script>
 
-<template v-for="singleData in data">
+<template v-for="{id, title, date_start, date_end, medium_display} in data"> 
   <div class="row">
-    <ul>
+    <ul key="{{id}}">
       <li>
-        <h3 class="item">Title: {{ limit.singleData.title }}</h3>
+        <h3 class="item">Title: {{title}}</h3>
       </li>
       <li>
-        <h3 class="item">Text:</h3>
+        <h3 class="item">Text:{{medium_display}}</h3>
       </li>
       <li>
-        <h3 class="item">Date start:</h3>
+        <h3 class="item">Date start:{{date_start}}</h3>
       </li>
       <li>
-        <h3 class="item">Date end:</h3>
+        <h3 class="item">Date end:{{date_end}}</h3>
       </li>
       <li>
-        <h3 class="item">Display:</h3>
+        <h3 class="item">Display:{{date_display}}</h3>
       </li>
       <li>
         <button type="submit">Details</button>
@@ -92,5 +93,8 @@ export default {
 .row {
   display: flex;
   flex-direction: row;
+}
+ul {
+  list-style: none;
 }
 </style>
