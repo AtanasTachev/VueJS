@@ -41,6 +41,7 @@ export default {
     // currentBranch: 'main',
     data: null,
     information: null,
+    pieces: null
   }),
   created() {
     this.fetchData();
@@ -53,13 +54,14 @@ export default {
       const url = `${API_URL}`; //${this.currentBranch}
       this.information = await (await fetch(url)).json();
       this.data = this.information["data"];
-      console.log(this.data);
+      this.pieces = Object.values(this.data)
+      console.log({...this.pieces});
     },
   },
 };
 </script>
 
-<template v-for="{id, title, date_start, date_end, medium_display} in data"> 
+<template v-for="{id, title, date_start, date_end, medium_display} in pieces"> 
   <div class="row">
     <ul key="{{id}}">
       <li>
