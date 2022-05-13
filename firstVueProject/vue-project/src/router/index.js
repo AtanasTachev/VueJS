@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ContactsView from '../views/ContactsView.vue'
 import ArtworksView from '../views/ArtworksView.vue'
+import LoginFormView from '../views/LoginformView.vue'
+
 
 
 const router = createRouter({
@@ -31,6 +33,12 @@ const router = createRouter({
       // component: () => import('../views/ArtworksView.vue')
       component: ArtworksView
     },
+    {
+      path: '/login',
+      name: 'login',
+      // component: () => import('../views/ArtworksView.vue')
+      component: LoginFormView
+    }
   ]
 })
 
