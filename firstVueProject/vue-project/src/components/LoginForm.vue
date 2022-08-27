@@ -1,11 +1,3 @@
-<script>
-export default {
-    data: () => ({
-        
-    }),
-}
-</script>
-
 <template>
     <form action="POST">
         <fieldset>
@@ -32,6 +24,14 @@ export default {
 
     </form>
 </template>
+
+<script>
+    export default {
+        data: () => ({
+            
+        }),
+    }
+    </script>
 
 <style scoped>
     .input {

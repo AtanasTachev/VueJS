@@ -1,5 +1,30 @@
+<template v-for="{id, title, date_start, date_end, medium_display} in pieces"> 
+  <div class="row">
+    <ul key="{{id}}">
+      <li>
+        <h3 class="item">Title: {{title}}</h3>
+      </li>
+      <li>
+        <h3 class="item">Text:{{medium_display}}</h3>
+      </li>
+      <li>
+        <h3 class="item">Date start:{{date_start}}</h3>
+      </li>
+      <li>
+        <h3 class="item">Date end:{{date_end}}</h3>
+      </li>
+      <li>
+        <h3 class="item">Display:{{date_display}}</h3>
+      </li>
+      <li>
+        <button type="submit">Details</button>
+      </li>
+    </ul>
+  </div>
+</template>
+
 <script>
-const API_URL = 'https://api.artic.edu/api/v1/artworks?page=1&limit=10';
+const API_URL = 'https://api.artic.edu/api/v1/artworks?page=1&limit=10'
 
 // export default {
 //   name: "App",
@@ -60,31 +85,6 @@ export default {
   },
 };
 </script>
-
-<template v-for="{id, title, date_start, date_end, medium_display} in pieces"> 
-  <div class="row">
-    <ul key="{{id}}">
-      <li>
-        <h3 class="item">Title: {{title}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Text:{{medium_display}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Date start:{{date_start}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Date end:{{date_end}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Display:{{date_display}}</h3>
-      </li>
-      <li>
-        <button type="submit">Details</button>
-      </li>
-    </ul>
-  </div>
-</template>
 
 <style scoped>
 .item {
