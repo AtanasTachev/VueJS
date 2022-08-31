@@ -1,5 +1,7 @@
 <template>
   <div class="item">
+    Navigation
+
     <i>
       <slot name="icon"></slot>
     </i>

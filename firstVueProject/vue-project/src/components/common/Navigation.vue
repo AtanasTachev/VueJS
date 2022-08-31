@@ -1,0 +1,9 @@
+<template>
+    <nav>
+        <ul>
+            <li>
+                <router-link>home</router-link>
+            </li>
+        </ul>
+    </nav>
+</template>
