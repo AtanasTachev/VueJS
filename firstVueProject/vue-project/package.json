@@ -20,6 +20,7 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
     "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/devtools": "^6.2.1",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/test-utils": "^2.0.0-rc.18",
     "cypress": "^9.5.3",

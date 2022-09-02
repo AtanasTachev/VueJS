@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li>
-                <router-link>home</router-link>
+                <router-link tag="btn" to="/">home</router-link>
             </li>
         </ul>
     </nav>
