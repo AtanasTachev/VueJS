@@ -1,25 +1,37 @@
-<template v-for="{id, title, date_start, date_end, medium_display} in pieces"> 
-  <div class="row">
-    <ul key="{{id}}">
+<template> 
+  <div>
+    <table>
+      <thead>
+        <th><button>Title</button></th>
+        <th><button>Origin</button></th>
+      </thead>
+      <tbody>
+        <tr v-for="(artwork, index) in pieces" :key="index">
+          <td><button disbled>{{ artwork.title }}</button></td>
+          <td><button disbled>{{ artwork['place_of_origin'] }}</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <ul key="{{index}}">
       <li>
-        <h3 class="item">Title: {{title}}</h3>
+        <h3 class="item">Title: {{artwork.title}}</h3>
+      </li> -->
+      <!-- <li>
+        <h3 class="item">Text:{{artwork.medium_display}}</h3>
       </li>
       <li>
-        <h3 class="item">Text:{{medium_display}}</h3>
+        <h3 class="item">Date start:{{artwork.date_start}}</h3>
       </li>
       <li>
-        <h3 class="item">Date start:{{date_start}}</h3>
+        <h3 class="item">Date end:{{artwork.date_end}}</h3>
       </li>
       <li>
-        <h3 class="item">Date end:{{date_end}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Display:{{date_display}}</h3>
+        <h3 class="item">Display:{{artwork.date_display}}</h3>
       </li>
       <li>
         <button type="submit">Details</button>
-      </li>
-    </ul>
+      </li> -->
+    <!-- </ul> -->
   </div>
 </template>
 
@@ -78,9 +90,10 @@ export default {
     async fetchData() {
       const url = `${API_URL}`; //${this.currentBranch}
       this.information = await (await fetch(url)).json();
-      this.data = this.information["data"];
-      this.pieces = Object.values(this.data)
-      console.log({...this.pieces});
+      // this.data = this.information.data;
+      // this.pieces = Object.values(this.data)
+      console.log(this.information.data);
+      this.pieces = this.information.data
     },
   },
 };
