@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { RouterView } from 'vue-router'
+// import HelloWorld from '@/components/HelloWorld.vue'
 import Navigation from './components/common/Navigation.vue';
 </script>
 
@@ -11,6 +11,16 @@ import Navigation from './components/common/Navigation.vue';
       <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
       <div class="wrapper">
+        <b-card>
+            <b-nav pills> 
+                <b-nav-item><router-link to="/">Home</router-link></b-nav-item>
+                <b-nav-item><router-link to="/about">About</router-link></b-nav-item>
+                <b-nav-item><router-link to="/artworks">Artworks</router-link></b-nav-item>
+                <b-nav-item><router-link to="/contacts">Contacts</router-link></b-nav-item>
+                <b-nav-item><router-link to="/login">Login</router-link></b-nav-item>
+            </b-nav>
+            <!-- <b-button variant="primary">Click</b-button> -->
+        </b-card>
         <!-- <HelloWorld msg="You are doing fine" /> -->
 
         <!-- <nav>
@@ -32,7 +42,7 @@ import Navigation from './components/common/Navigation.vue';
 @import '@/assets/base.css';
 
 #app {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
 
@@ -87,7 +97,7 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 2034px) {
   body {
     display: flex;
     place-items: center;

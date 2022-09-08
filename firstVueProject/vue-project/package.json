@@ -11,9 +11,12 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.1",
     "bootstrap-vue": "^2.22.0",
+    "bootstrap-vue-3": "^0.3.1",
     "pinia": "^2.0.13",
-    "vue": "^3.2.31",
+    "vue": "^3.2.39",
     "vue-router": "^4.0.14",
     "vuex": "^4.0.2"
   },
