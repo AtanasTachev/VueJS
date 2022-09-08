@@ -1,9 +1,9 @@
 <template>
     <nav>
-        <ul>
-            <li>
-                <router-link tag="btn" to="/">home</router-link>
-            </li>
-        </ul>
+        <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+        <router-link to="/artworks">Artworks</router-link>
+        <router-link to="/contacts">Contacts</router-link>
+        <router-link to="/login">Login</router-link>
     </nav>
 </template>
