@@ -18,6 +18,8 @@
           <b-form-group label="Repeat Password">
             <b-form-input v-model="form.repass" placeholder="repeat password"></b-form-input>
           </b-form-group>
+          <b-button type="submit" variant="primary">Submit</b-button>
+          <b-button type="reset" variant="danger">Reset</b-button>
         </b-form>
       </div>
     </b-card>
@@ -25,6 +27,16 @@
 </template>
 
 <script>
+import {ref, computed, reactive, nextTick} from 'vue'
+
+// const form = reactive({
+//   firstName: '',
+//   lastName: '',
+//   email: '',
+//   pass: '',
+//   repass: ''
+//   })
+
 export default {
   data: () => {
     return {
@@ -37,6 +49,15 @@ export default {
       }
     }
   },
+  methods: {
+    onSubmit (e) {
+      e.preventDefault()
+      alert(JSON.stringify(form))
+    },
+    onReset () {
+      console.log(form)
+    }
+  }
 }
 </script>
 
