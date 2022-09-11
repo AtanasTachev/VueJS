@@ -18,47 +18,59 @@
           <b-form-group label="Repeat Password">
             <b-form-input v-model="form.repass" placeholder="repeat password"></b-form-input>
           </b-form-group>
-          <b-button type="submit" variant="primary">Submit</b-button>
-          <b-button type="reset" variant="danger">Reset</b-button>
+          <div content-class="mr-3">
+            <b-button type="submit" variant="primary">Submit</b-button>
+            <b-button type="reset" variant="danger">Reset</b-button>
+          </div>
         </b-form>
       </div>
     </b-card>
   </div>
 </template>
 
-<script>
+<script setup>
 import {ref, computed, reactive, nextTick} from 'vue'
 
-// const form = reactive({
-//   firstName: '',
-//   lastName: '',
-//   email: '',
-//   pass: '',
-//   repass: ''
-//   })
+const form = reactive({
+  firstName: '',
+  lastName: '',
+  email: '',
+  pass: '',
+  repass: ''
+  })
 
-export default {
-  data: () => {
-    return {
-      form: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        pass: '',
-        repass: ''
-      }
-    }
-  },
-  methods: {
-    onSubmit (e) {
-      e.preventDefault()
-      alert(JSON.stringify(form))
-    },
-    onReset () {
-      console.log(form)
-    }
+  const onSubmit = (e) => {
+    e.preventDefault()
+    alert(JSON.stringify(form))
+  } 
+
+  const onReset = (e) => {
+    e.preventDefault()
+    alert(JSON.stringify(form))
   }
-}
+// export default {
+//   data: () => {
+//     return {
+//       form: {
+//         firstName: '',
+//         lastName: '',
+//         email: '',
+//         pass: '',
+//         repass: ''
+//       }
+//     }
+//   },
+//   methods: {
+//     onSubmit (e) {
+//       e.preventDefault()
+//       alert(JSON.stringify(form))
+//     },
+//     onReset (e) {
+//       e.preventDefault()
+//       console.log(form)
+//     }
+//   }
+// }
 </script>
 
 <style scoped>
