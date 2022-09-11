@@ -3,11 +3,19 @@
     <b-card>
       <div>
         <b-form @submit="onSubmit" @reset="onReset">
-          <b-form-group label="First name">
-            <b-form-input v-model="form.firstName" placeholder="Ivan"></b-form-input>
+          <b-form-group label="First name" for="feedback-first-name">
+            <b-form-input :state="firstNameValidation" id="feedback-first-name" v-model="form.firstName" placeholder="Ivan"></b-form-input>
+            <b-form-invalid-feedback :state="firstNameValidation">
+              First name has to be at least 3 symbols, but no more than 10
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="firstNameValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>          
           <b-form-group label="Last name">
-            <b-form-input v-model="form.lastName" placeholder="Ivanov"></b-form-input>
+            <b-form-input v-model="form.lastName" placeholder="Ivanov" :state="lastNameValidation"></b-form-input>            
+            <b-form-invalid-feedback :state="lastNameValidation">
+              Last name has to be at least 5 symbols, but no more than 10
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="lastNameValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>
           <b-form-group label="Email address:">
             <b-form-input v-model="form.email" placeholder="ivan.ivanov@abv.bg"></b-form-input>
@@ -39,6 +47,9 @@ const form = reactive({
   repass: ''
   })
 
+  const firstNameValidation = computed(() => form.firstName.length > 2 && form.firstName.length < 10)
+  const lastNameValidation = computed(() => form.lastName.length > 2 && form.lastName.length < 10)
+
   const onSubmit = (e) => {
     e.preventDefault()
     alert(JSON.stringify(form))
@@ -48,29 +59,6 @@ const form = reactive({
     e.preventDefault()
     alert(JSON.stringify(form))
   }
-// export default {
-//   data: () => {
-//     return {
-//       form: {
-//         firstName: '',
-//         lastName: '',
-//         email: '',
-//         pass: '',
-//         repass: ''
-//       }
-//     }
-//   },
-//   methods: {
-//     onSubmit (e) {
-//       e.preventDefault()
-//       alert(JSON.stringify(form))
-//     },
-//     onReset (e) {
-//       e.preventDefault()
-//       console.log(form)
-//     }
-//   }
-// }
 </script>
 
 <style scoped>
