@@ -18,7 +18,11 @@
             <b-form-valid-feedback :state="lastNameValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>
           <b-form-group label="Email address:">
-            <b-form-input v-model="form.email" placeholder="ivan.ivanov@abv.bg"></b-form-input>
+            <b-form-input :state="emailValidation" v-model="form.email" placeholder="ivan.ivanov@abv.bg"></b-form-input>
+            <b-form-invalid-feedback :state="emailValidation">
+              Email should be valid
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="emailValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>
           <b-form-group label="Password">
             <b-form-input v-model="form.pass" placeholder="at least 8 symbols"></b-form-input>
@@ -49,6 +53,7 @@ const form = reactive({
 
   const firstNameValidation = computed(() => form.firstName.length > 2 && form.firstName.length < 10)
   const lastNameValidation = computed(() => form.lastName.length > 2 && form.lastName.length < 10)
+  const emailValidation = computed(() => form.email.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gmi) !== null)
 
   const onSubmit = (e) => {
     e.preventDefault()
