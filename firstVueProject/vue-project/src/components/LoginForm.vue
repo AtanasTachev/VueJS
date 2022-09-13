@@ -25,7 +25,7 @@
             <b-form-valid-feedback :state="emailValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>
           <b-form-group label="Password">
-            <b-form-input type="password" v-model="form.pass" placeholder="password"></b-form-input>
+            <b-form-input type="password" :state="passwordValidation" v-model="form.pass" placeholder="password"></b-form-input>
             <b-form-invalid-feedback :state="passwordValidation">
               Password should contain at least 8 symbols
             </b-form-invalid-feedback>
