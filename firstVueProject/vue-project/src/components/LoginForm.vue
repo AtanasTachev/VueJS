@@ -25,10 +25,18 @@
             <b-form-valid-feedback :state="emailValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>
           <b-form-group label="Password">
-            <b-form-input v-model="form.pass" placeholder="at least 8 symbols"></b-form-input>
+            <b-form-input type="password" v-model="form.pass" placeholder="password"></b-form-input>
+            <b-form-invalid-feedback :state="passwordValidation">
+              Password should contain at least 8 symbols
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="passwordValidation"> Looks Good. </b-form-valid-feedback>
           </b-form-group>
           <b-form-group label="Repeat Password">
-            <b-form-input v-model="form.repass" placeholder="repeat password"></b-form-input>
+            <b-form-input type="password" :state="rePasswordValidation" v-model="form.repass" placeholder="repeat password"></b-form-input>
+            <b-form-invalid-feedback :state="rePassValidation">
+              Repeat password should be the same as password
+            </b-form-invalid-feedback>
+            <b-form-valid-feedback :state="rePassValidation">Looks good.</b-form-valid-feedback>
           </b-form-group>
           <div content-class="mr-3">
             <b-button type="submit" variant="primary">Submit</b-button>
@@ -54,6 +62,8 @@ const form = reactive({
   const firstNameValidation = computed(() => form.firstName.length > 2 && form.firstName.length < 10)
   const lastNameValidation = computed(() => form.lastName.length > 2 && form.lastName.length < 10)
   const emailValidation = computed(() => form.email.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/gmi) !== null)
+  const passwordValidation = computed(() => form.pass.length >= 8)
+  const rePassValidation = computed(() => form.repass === form.pass)
 
   const onSubmit = (e) => {
     e.preventDefault()
