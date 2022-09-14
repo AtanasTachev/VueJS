@@ -7,6 +7,7 @@
       <b-col class="item">OSM ID: {{ unit.osm_id}}</b-col>
       <b-col class="item">Bounding Box: {{ unit.boundingbox }}</b-col>
       <b-col class="item">Latitude: {{ unit.lat }}</b-col>
+      <b-col class="item">Longitude: {{ unit.lon }}</b-col>
       <b-col class="item">Display Name: {{ unit.display_name }}</b-col>
       <b-col class="item">Class: {{ unit.class }}</b-col>
       <b-col class="item">Type: {{ unit.type }}</b-col>
