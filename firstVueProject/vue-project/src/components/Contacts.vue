@@ -1,18 +1,20 @@
 <template>
   <!-- <b-form-input ref="input"></b-form-input> -->
-  <div class="row" v-for="(unit, index) in data" :key="indexs">
+  <div class="row mb-4" v-for="(unit, index) in data" :key="indexs">
     <b-card>
       <b-container>
-        <b-col class="item">Place ID: {{ unit.place_id}}</b-col>
-        <b-col class="item">OSM type: {{ unit.osm_type }}</b-col>
-        <b-col class="item">OSM ID: {{ unit.osm_id}}</b-col>
-        <b-col class="item">Bounding Box: {{ unit.boundingbox }}</b-col>
-        <b-col class="item">Latitude: {{ unit.lat }}</b-col>
-        <b-col class="item">Longitude: {{ unit.lon }}</b-col>
-        <b-col class="item">Display Name: {{ unit.display_name }}</b-col>
-        <b-col class="item">Class: {{ unit.class }}</b-col>
-        <b-col class="item">Type: {{ unit.type }}</b-col>
-        <b-col class="item">Importance: {{ unit.importance }}</b-col>
+        <table>
+          <tr><b-col class="item"><strong>Place ID: {{ unit.place_id}}</strong></b-col></tr>
+          <tr><b-col class="item">OSM type: {{ unit.osm_type }}</b-col></tr>
+          <tr><b-col class="item">OSM ID: {{ unit.osm_id}}</b-col></tr>
+          <tr><b-col class="item">Bounding Box: {{ unit.boundingbox }}</b-col></tr>
+          <tr><b-col class="item">Latitude: {{ unit.lat }}</b-col></tr>
+          <tr><b-col class="item">Longitude: {{ unit.lon }}</b-col></tr>
+          <tr><b-col class="item">Display Name: {{ unit.display_name }}</b-col></tr>
+          <tr><b-col class="item">Class: {{ unit.class }}</b-col></tr>
+          <tr><b-col class="item">Type: {{ unit.type }}</b-col></tr>
+          <tr><b-col class="item">Importance: {{ unit.importance }}</b-col></tr>
+        </table>
       </b-container>
     </b-card>
   </div>
@@ -57,7 +59,9 @@
   margin-right: 2rem;
 }
 .row {    
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
+tr:nth-child(even){background: #CCC}
+tr:nth-child(odd){background: #FFF}
 </style>
