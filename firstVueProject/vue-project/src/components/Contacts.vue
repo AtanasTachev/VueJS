@@ -3,18 +3,18 @@
   <div class="row mb-4" v-for="(unit, index) in data" :key="indexs">
     <b-card>
       <b-container>
-        <table>
-          <tr><b-col class="item"><strong>Place ID: {{ unit.place_id}}</strong></b-col></tr>
-          <tr><b-col class="item">OSM type: {{ unit.osm_type }}</b-col></tr>
-          <tr><b-col class="item">OSM ID: {{ unit.osm_id}}</b-col></tr>
-          <tr><b-col class="item">Bounding Box: {{ unit.boundingbox }}</b-col></tr>
-          <tr><b-col class="item">Latitude: {{ unit.lat }}</b-col></tr>
-          <tr><b-col class="item">Longitude: {{ unit.lon }}</b-col></tr>
-          <tr><b-col class="item">Display Name: {{ unit.display_name }}</b-col></tr>
-          <tr><b-col class="item">Class: {{ unit.class }}</b-col></tr>
-          <tr><b-col class="item">Type: {{ unit.type }}</b-col></tr>
-          <tr><b-col class="item">Importance: {{ unit.importance }}</b-col></tr>
-        </table>
+        <b-tab-simple>
+          <b-tr><b-col class="item"><sb-trong>Place ID: {{ unit.place_id}}</sb-trong></b-col></b-tr>
+          <b-tr><b-col class="item">OSM type: {{ unit.osm_type }}</b-col></b-tr>
+          <b-tr><b-col class="item">OSM ID: {{ unit.osm_id}}</b-col></b-tr>
+          <b-tr><b-col class="item">Bounding Box: {{ unit.boundingbox }}</b-col></b-tr>
+          <b-tr><b-col class="item">Latitude: {{ unit.lat }}</b-col></b-tr>
+          <b-tr><b-col class="item">Longitude: {{ unit.lon }}</b-col></b-tr>
+          <b-tr><b-col class="item">Display Name: {{ unit.display_name }}</b-col></b-tr>
+          <b-tr><b-col class="item">Class: {{ unit.class }}</b-col></b-tr>
+          <b-tr><b-col class="item">Type: {{ unit.type }}</b-col></b-tr>
+          <b-tr><b-col class="item">Importance: {{ unit.importance }}</b-col></b-tr>
+        </b-tab-simple>
       </b-container>
     </b-card>
   </div>
@@ -22,8 +22,8 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  const API_URL = 'https://nominatim.openstreetmap.org/search.php?city=sofia&format=json'
-  // let API_URL = 'https://nominatim.openstreetmap.org/search.php?city='
+  const API_URL = 'https://nominatim.opensb-treetmap.org/search.php?city=sofia&format=json'
+  // let API_URL = 'https://nominatim.opensb-treetmap.org/search.php?city='
   // if (input.length > 0) {
   //   API_URL.concat(`${input}&format=json`)
   // }
@@ -62,6 +62,6 @@
   display: flex;
   flex-direction: row;
 }
-tr:nth-child(even){background: #CCC}
-tr:nth-child(odd){background: #FFF}
+b-tr:nth-child(even){background: #CCC}
+b-tr:nth-child(odd){background: #FFF}
 </style>

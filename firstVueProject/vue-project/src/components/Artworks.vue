@@ -1,77 +1,27 @@
 <template> 
   <div>
-    <table>
-      <thead>
-        <th><button>Title</button></th>
-        <th><button>Origin</button></th>
-      </thead>
-      <tbody>
-        <tr v-for="(artwork, index) in pieces" :key="index">
-          <td><button disbled>{{ artwork.title }}</button></td>
-          <td><button disbled>{{ artwork['place_of_origin'] }}</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <!-- <ul key="{{index}}">
-      <li>
-        <h3 class="item">Title: {{artwork.title}}</h3>
-      </li> -->
-      <!-- <li>
-        <h3 class="item">Text:{{artwork.medium_display}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Date start:{{artwork.date_start}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Date end:{{artwork.date_end}}</h3>
-      </li>
-      <li>
-        <h3 class="item">Display:{{artwork.date_display}}</h3>
-      </li>
-      <li>
-        <button type="submit">Details</button>
-      </li> -->
-    <!-- </ul> -->
+    <b-card>
+      <b-container>
+        <b-table-simple>
+          <thead>
+            <th style="font-weight: bold">Title</th>
+            <th style="font-weight: bold" class="border-right">Origin</th>
+          </thead>
+          <tbody>
+            <b-tr v-for="(artwork, index) in pieces" :key="index">
+              <td>{{ artwork.title }}</td>
+              <td>{{ artwork['place_of_origin'] }}</td>
+            </b-tr>
+          </tbody>
+        </b-table-simple>
+      </b-container>
+    </b-card>
   </div>
 </template>
 
 <script>
-const API_URL = 'https://api.artic.edu/api/v1/artworks?page=1&limit=10'
+const API_URL = 'https://api.artic.edu/api/v1/artworks?page=1&limit=21'
 
-// export default {
-//   name: "App",
-//   data() {
-//     return {
-//       getResult: null
-//     }
-//   },
-//   methods: {
-//     fortmatResponse(res) {
-//       return JSON.stringify(res, null, 2);
-//     },
-//     async getAllData() {
-//       try {
-//         const res = await fetch(`${API_URL}`);
-//         if (!res.ok) {
-//           const message = `An error has occured: ${res.status} - ${res.statusText}`;
-//           throw new Error(message);
-//         }
-//         const data = await res.json();
-//         const result = {
-//           status: res.status + "-" + res.statusText,
-//           headers: {
-//             "Content-Type": res.headers.get("Content-Type"),
-//             "Content-Length": res.headers.get("Content-Length"),
-//           },
-//           length: res.headers.get("Content-Length"),
-//           data: data,
-//         };
-//         this.getResult = this.fortmatResponse(result);
-//       } catch (err) {
-//         this.getResult = err.message;
-//       }
-//     }
-//   }
 export default {
   data: () => ({
     // branches: ['main', 'v2-compat'],
@@ -112,4 +62,5 @@ export default {
 ul {
   list-style: none;
 }
+b-tr:nth-child(odd) {background-color: #dbd7d7}
 </style>
