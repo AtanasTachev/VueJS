@@ -3,8 +3,8 @@
   <div class="row mb-4" v-for="(unit, index) in data" :key="indexs">
     <b-card>
       <b-container>
-        <b-tab-simple>
-          <b-tr><b-col class="item"><sb-trong>Place ID: {{ unit.place_id}}</sb-trong></b-col></b-tr>
+        <b-table-simple>
+          <b-tr><b-col class="item"><b-avatar src="{{unit.icon}}"></b-avatar><strong>Place ID: {{ unit.place_id}}</strong></b-col></b-tr>
           <b-tr><b-col class="item">OSM type: {{ unit.osm_type }}</b-col></b-tr>
           <b-tr><b-col class="item">OSM ID: {{ unit.osm_id}}</b-col></b-tr>
           <b-tr><b-col class="item">Bounding Box: {{ unit.boundingbox }}</b-col></b-tr>
@@ -14,7 +14,28 @@
           <b-tr><b-col class="item">Class: {{ unit.class }}</b-col></b-tr>
           <b-tr><b-col class="item">Type: {{ unit.type }}</b-col></b-tr>
           <b-tr><b-col class="item">Importance: {{ unit.importance }}</b-col></b-tr>
-        </b-tab-simple>
+          <b-tr><b-col class="item">Address: </b-col></b-tr>
+          <b-card>
+            <b-table-simlpe>
+              <thead>
+                <tr>
+                  <th style="font-weight: bold" class="mr-2">Shop</th>
+                  <th style="font-weight: bold" class="mr-2">Number</th>
+                  <th style="font-weight: bold" class="mr-2">Road</th>
+                  <th style="font-weight: bold" class="mr-2">Neighbourhood</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mr-2">{{unit.address.shop}}</td>
+                  <td class="mr-2">{{unit.address['house_number']}}</td>
+                  <td class="mr-2">{{unit.address.road}}</td>
+                  <td class="mr-2">{{unit.address.neighbourhood}}</td>
+                </tr>
+              </tbody>
+              </b-table-simlpe>
+          </b-card>
+        </b-table-simple>
       </b-container>
     </b-card>
   </div>
@@ -22,7 +43,7 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
-  const API_URL = 'https://nominatim.opensb-treetmap.org/search.php?city=sofia&format=json'
+  const API_URL = 'https://nominatim.openstreetmap.org/search?addressdetails=1&q=bakery+in+berlin+wedding&format=json&limit=1'
   // let API_URL = 'https://nominatim.opensb-treetmap.org/search.php?city='
   // if (input.length > 0) {
   //   API_URL.concat(`${input}&format=json`)
