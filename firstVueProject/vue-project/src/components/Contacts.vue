@@ -23,6 +23,13 @@
                   <th style="font-weight: bold" class="mr-2">Number</th>
                   <th style="font-weight: bold" class="mr-2">Road</th>
                   <th style="font-weight: bold" class="mr-2">Neighbourhood</th>
+                  <th style="font-weight: bold" class="mr-2">Suburb</th>
+                  <th style="font-weight: bold" class="mr-2">Borough</th>
+                  <th style="font-weight: bold" class="mr-2">City</th>
+                  <th style="font-weight: bold" class="mr-2">ISO3166-2-lvl4</th>
+                  <th style="font-weight: bold" class="mr-2">Postcode</th>
+                  <th style="font-weight: bold" class="mr-2">Country</th>
+                  <th style="font-weight: bold" class="mr-2">Country Code</th>
                 </tr>
               </thead>
               <tbody>
@@ -30,7 +37,14 @@
                   <td class="mr-2">{{unit.address.shop}}</td>
                   <td class="mr-2">{{unit.address['house_number']}}</td>
                   <td class="mr-2">{{unit.address.road}}</td>
+                  <td class="mr-2">{{unit.address.suburb}}</td>
                   <td class="mr-2">{{unit.address.neighbourhood}}</td>
+                  <td class="mr-2">{{unit.address.borough}}</td>
+                  <td class="mr-2">{{unit.address.city}}</td>
+                  <td class="mr-2">{{unit.address['ISO3166-2-lvl4']}}</td>
+                  <td class="mr-2">{{unit.address.postcode}}</td>
+                  <td class="mr-2">{{unit.address.country}}</td>
+                  <td class="mr-2">{{unit.address['country_code']}}</td>
                 </tr>
               </tbody>
               </b-table-simlpe>
