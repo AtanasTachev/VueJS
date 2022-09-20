@@ -16,38 +16,38 @@
           <b-tr><b-col class="item">Importance: {{ unit.importance }}</b-col></b-tr>
           <b-tr><b-col class="item">Address: </b-col></b-tr>
           <b-card>
-            <b-table-simlpe>
+            <b-table-simple striped hover>
               <thead>
                 <tr>
-                  <th style="font-weight: bold" class="mr-2">Shop</th>
-                  <th style="font-weight: bold" class="mr-2">Number</th>
-                  <th style="font-weight: bold" class="mr-2">Road</th>
-                  <th style="font-weight: bold" class="mr-2">Neighbourhood</th>
-                  <th style="font-weight: bold" class="mr-2">Suburb</th>
-                  <th style="font-weight: bold" class="mr-2">Borough</th>
-                  <th style="font-weight: bold" class="mr-2">City</th>
-                  <th style="font-weight: bold" class="mr-2">ISO3166-2-lvl4</th>
-                  <th style="font-weight: bold" class="mr-2">Postcode</th>
-                  <th style="font-weight: bold" class="mr-2">Country</th>
-                  <th style="font-weight: bold" class="mr-2">Country Code</th>
+                  <th style="font-weight: bold" class="border-info">Shop</th>
+                  <th style="font-weight: bold" class="border-info">Number</th>
+                  <th style="font-weight: bold" class="border-info">Road</th>
+                  <th style="font-weight: bold" class="border-info">Neighbourhood</th>
+                  <th style="font-weight: bold" class="border-info">Suburb</th>
+                  <th style="font-weight: bold" class="border-info">Borough</th>
+                  <th style="font-weight: bold" class="border-info">City</th>
+                  <th style="font-weight: bold" class="border-info">ISO3166-2-lvl4</th>
+                  <th style="font-weight: bold" class="border-info">Postcode</th>
+                  <th style="font-weight: bold" class="border-info">Country</th>
+                  <th style="font-weight: bold" class="border-info">Country Code</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="mr-2">{{unit.address.shop}}</td>
-                  <td class="mr-2">{{unit.address['house_number']}}</td>
-                  <td class="mr-2">{{unit.address.road}}</td>
-                  <td class="mr-2">{{unit.address.suburb}}</td>
-                  <td class="mr-2">{{unit.address.neighbourhood}}</td>
-                  <td class="mr-2">{{unit.address.borough}}</td>
-                  <td class="mr-2">{{unit.address.city}}</td>
-                  <td class="mr-2">{{unit.address['ISO3166-2-lvl4']}}</td>
-                  <td class="mr-2">{{unit.address.postcode}}</td>
-                  <td class="mr-2">{{unit.address.country}}</td>
-                  <td class="mr-2">{{unit.address['country_code']}}</td>
+                  <td class="border-info">{{unit.address.shop}}</td>
+                  <td class="border-info">{{unit.address['house_number']}}</td>
+                  <td class="border-info">{{unit.address.road}}</td>
+                  <td class="border-info">{{unit.address.suburb}}</td>
+                  <td class="border-info">{{unit.address.neighbourhood}}</td>
+                  <td class="border-info">{{unit.address.borough}}</td>
+                  <td class="border-info">{{unit.address.city}}</td>
+                  <td class="border-info">{{unit.address['ISO3166-2-lvl4']}}</td>
+                  <td class="border-info">{{unit.address.postcode}}</td>
+                  <td class="border-info">{{unit.address.country}}</td>
+                  <td class="border-info">{{unit.address['country_code']}}</td>
                 </tr>
               </tbody>
-              </b-table-simlpe>
+              </b-table-simple>
           </b-card>
         </b-table-simple>
       </b-container>
